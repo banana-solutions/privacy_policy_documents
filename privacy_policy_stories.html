@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Stories App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #111827;
+            --border-color: #1f2937;
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --accent-color: #6366f1;
+            --accent-hover: #4f46e5;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --sidebar-bg: #0f172a;
+            --header-gradient-1: #6366f1;
+            --header-gradient-2: #ec4899;
+        }
+
+        [data-theme="light"] {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --accent-color: #4f46e5;
+            --accent-hover: #3730a3;
+            --accent-glow: rgba(79, 70, 229, 0.1);
+            --sidebar-bg: #f1f5f9;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: rgba(var(--bg-color), 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--header-gradient-1), var(--header-gradient-2));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-family: 'Outfit', sans-serif;
+            box-shadow: 0 4px 12px var(--accent-glow);
+        }
+
+        .logo-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            background: linear-gradient(to right, var(--text-primary), var(--text-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .theme-toggle-btn {
+            background: none;
+            border: 1px solid var(--border-color);
+            padding: 0.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+
+        .theme-toggle-btn:hover {
+            background-color: var(--border-color);
+        }
+
+        .theme-toggle-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 3rem;
+        }
+
+        /* Sidebar Navigation */
+        aside {
+            position: sticky;
+            top: 6rem;
+            height: fit-content;
+        }
+
+        .nav-card {
+            background-color: var(--sidebar-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem;
+        }
+
+        .nav-card h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .nav-item a {
+            display: block;
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .nav-item a:hover {
+            color: var(--text-primary);
+            background-color: var(--border-color);
+        }
+
+        .nav-item.active a {
+            color: white;
+            background-color: var(--accent-color);
+            box-shadow: 0 4px 12px var(--accent-glow);
+        }
+
+        /* Content Area */
+        main {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .doc-header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .doc-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.75rem;
+            background: linear-gradient(135deg, var(--accent-color), var(--header-gradient-2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .last-updated {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .badge {
+            background-color: var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Styling Sections */
+        section {
+            margin-bottom: 3rem;
+            scroll-margin-top: 6rem;
+        }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(to bottom, var(--accent-color), var(--header-gradient-2));
+            border-radius: 2px;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 1.25rem;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+            padding-left: 0.5rem;
+        }
+
+        li {
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.05rem;
+        }
+
+        li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-card {
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.25rem;
+            background-color: rgba(255, 255, 255, 0.01);
+            transition: all 0.2s;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--accent-glow);
+        }
+
+        .service-name {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .service-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(236, 72, 153, 0.05));
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .contact-email {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+            transition: color 0.2s;
+        }
+
+        .contact-email:hover {
+            color: var(--header-gradient-2);
+        }
+
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-top: 4rem;
+        }
+
+        /* Print styling */
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+            aside, header, footer, .theme-toggle-btn {
+                display: none;
+            }
+            .container {
+                display: block;
+                padding: 0;
+            }
+            main {
+                border: none;
+                box-shadow: none;
+                padding: 0;
+            }
+            h2::before {
+                display: none;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            aside {
+                position: relative;
+                top: 0;
+            }
+            main {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div class="logo-icon">S</div>
+            <span class="logo-text">Stories</span>
+        </div>
+        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle light/dark theme">
+            <!-- Sun Icon -->
+            <svg id="sunIcon" style="display: none;" viewBox="0 0 24 24">
+                <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.01c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+            </svg>
+            <!-- Moon Icon -->
+            <svg id="moonIcon" viewBox="0 0 24 24">
+                <path d="M12.3 22h-.1c-5.5 0-10-4.5-10-10 0-4.8 3.5-9 8.3-9.9.5-.1.9.3.8.8-.4 1.5-.1 3.2.9 4.6 1 1.5 2.7 2.4 4.5 2.4.9 0 1.9-.2 2.7-.7.4-.3.9 0 .8.5-.8 4.8-4.9 8.3-9.9 8.3z"/>
+            </svg>
+        </button>
+    </header>
+
+    <div class="container">
+        <aside>
+            <div class="nav-card">
+                <h3>Contents</h3>
+                <ul class="nav-list">
+                    <li class="nav-item active" data-sec="introduction"><a href="#introduction">1. Introduction</a></li>
+                    <li class="nav-item" data-sec="data-collection"><a href="#data-collection">2. Data Collection</a></li>
+                    <li class="nav-item" data-sec="data-usage"><a href="#data-usage">3. How We Use Data</a></li>
+                    <li class="nav-item" data-sec="third-party"><a href="#third-party">4. Third-Party Services</a></li>
+                    <li class="nav-item" data-sec="data-storage"><a href="#data-storage">5. Data Storage & Safety</a></li>
+                    <li class="nav-item" data-sec="user-rights"><a href="#user-rights">6. Your Rights</a></li>
+                    <li class="nav-item" data-sec="changes"><a href="#changes">7. Policy Changes</a></li>
+                    <li class="nav-item" data-sec="contact"><a href="#contact">8. Contact Us</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main>
+            <div class="doc-header">
+                <span class="badge">Legal Agreement</span>
+                <h1 class="doc-title">Privacy Policy</h1>
+                <div class="last-updated">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    Last Updated: June 9, 2026
+                </div>
+            </div>
+
+            <section id="introduction">
+                <h2>Introduction</h2>
+                <p>Welcome to <strong>Stories</strong> ("we", "our", or "us"). We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application (the "App").</p>
+                <p>By using the Stories application, you agree to the collection and use of information in accordance with this policy. If you do not agree with the terms of this privacy policy, please do not access the application.</p>
+            </section>
+
+            <section id="data-collection">
+                <h2>Data Collection</h2>
+                <p>Our primary goal is to provide a premium, seamless story reading experience. To achieve this, our application collects information in the following ways:</p>
+                <ul>
+                    <li><strong>No Personal Identification Details:</strong> We do not require you to create an account, log in, or provide personal details such as your name, email address, phone number, or physical address to read stories.</li>
+                    <li><strong>Local Storage Information:</strong> To enable features like offline reading and bookmarks, the App saves reading progress and list selections locally on your device using on-device SQLite databases and key-value preference storage.</li>
+                    <li><strong>Technical Device & Connection Data:</strong> When the App connects to our servers to fetch story contents and media, we may automatically process temporary network request data, such as your IP address, connection speed, and User-Agent header to serve the contents securely and efficiently.</li>
+                </ul>
+            </section>
+
+            <section id="data-usage">
+                <h2>How We Use Data</h2>
+                <p>We use the minimal information we process for the following operations:</p>
+                <ul>
+                    <li>To deliver, update, and manage the premium library of stories and genres.</li>
+                    <li>To save your customized bookmark lists and read history locally on your device.</li>
+                    <li>To monitor and resolve network connectivity issues or API download errors.</li>
+                    <li>To protect the app and API infrastructure from abusive traffic and requests.</li>
+                </ul>
+            </section>
+
+            <section id="third-party">
+                <h2>Third-Party Services</h2>
+                <p>The App integrates certain third-party services that process technical connection data. Below is a breakdown of these services, their purposes, and links to their respective privacy policies:</p>
+                
+                <div class="service-grid">
+                    <div class="service-card">
+                        <div class="service-name">Firebase (Google)</div>
+                        <div class="service-desc">Used to retrieve remote configuration, app base URLs, and Firestore database links to orchestrate content downloads.</div>
+                        <p style="font-size: 0.8rem; margin-top: 0.5rem; margin-bottom: 0;"><a href="https://firebase.google.com/support/privacy" target="_blank" style="color: var(--accent-color); text-decoration: none; font-weight: 600;">View Privacy Policy →</a></p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-name">WordPress REST API</div>
+                        <div class="service-desc">Used to fetch actual text categories and story posts from our backend web servers.</div>
+                        <p style="font-size: 0.8rem; margin-top: 0.5rem; margin-bottom: 0;"><a href="https://wordpress.org/about/privacy/" target="_blank" style="color: var(--accent-color); text-decoration: none; font-weight: 600;">View Privacy Policy →</a></p>
+                    </div>
+                </div>
+                <p>These third-party platforms may collect standard analytics and device identifiers in compliance with their own privacy policies.</p>
+            </section>
+
+            <section id="data-storage">
+                <h2>Data Storage & Safety</h2>
+                <p>Your local app interactions (bookmarks, read list, configuration) reside purely on your device storage (SQLite/SharedPreferences). This data is completely isolated to your device and is deleted if you uninstall the App or clear the App cache.</p>
+                <p>We implement industry-standard technical measures (such as SSL/HTTPS encryption for network calls and secure API keys) to protect data transmitted between the App and our backend servers.</p>
+            </section>
+
+            <section id="user-rights">
+                <h2>Your Rights</h2>
+                <p>Since the App collects zero personally identifiable information (PII) on our servers, we have no mechanism to look up, export, or delete any user profiles. You have absolute control over your local reading data, which you can erase at any time by:</p>
+                <ul>
+                    <li>Clearing the application's storage/cache in your Android or iOS settings.</li>
+                    <li>Uninstalling the application from your device.</li>
+                </ul>
+            </section>
+
+            <section id="changes">
+                <h2>Policy Changes</h2>
+                <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date at the top of the policy.</p>
+                <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+            </section>
+
+            <section id="contact">
+                <h2>Contact Us</h2>
+                <p>If you have any questions or suggestions regarding our Privacy Policy, please do not hesitate to reach out to us at:</p>
+                <div class="contact-box">
+                    <p>For questions or support, contact the application publisher:</p>
+                    <a href="mailto:info.bananasolutions@gmail.com" class="contact-email">info.bananasolutions@gmail.com</a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Stories App. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Theme toggler logic
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const sunIcon = document.getElementById('sunIcon');
+        const moonIcon = document.getElementById('moonIcon');
+
+        // Check user preferences
+        const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        setTheme(savedTheme);
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            setTheme(newTheme);
+        });
+
+        function setTheme(theme) {
+            if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+                sunIcon.style.display = 'block';
+                moonIcon.style.display = 'none';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Active link on scroll
+        const sections = document.querySelectorAll('section');
+        const navItems = document.querySelectorAll('.nav-item');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 120) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('data-sec') === current) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
